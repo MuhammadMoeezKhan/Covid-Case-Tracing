@@ -1,14 +1,14 @@
-Name, Contact, Location, Time
+Name, Close Contact, Location, Time, Contact Mehtod
 
-Spiderman, HomeComing, DePauw, 00:90
-You, Khan, DePauw, 14:00
-You, You, DePauw, 20:00
-Moeez, Khan, DePauw, 09:10
-Moeez, Moeez, DePauw, 02:05
-Maia, ANiy, DePauw, 12:05
-You, , DePauw, 02:15
-Moeez, Moeez, DePauw, 02:10
-Ali, Khan, DePauw, 14:00
+Spiderman, HomeComing, DePauw, 00:90, Email
+You, Khan, DePauw, 14:00, Mobile
+You, You, DePauw, 20:00, Email
+Moeez, Khan, DePauw, 09:10, Mobile
+Moeez, Moeez, DePauw, 02:05, Email
+Maia, ANiy, DePauw, 12:05, Email
+You, , DePauw, 02:15, Mobile
+Moeez, Moeez, DePauw, 02:10, Mobile
+Ali, Khan, DePauw, 14:00, Email
 
 
 
