@@ -212,7 +212,7 @@ do
 	
 }
 
-while(cont == 'y');
+//while(cont == 'y');
 
 cout << "The program has ended.";
 	
