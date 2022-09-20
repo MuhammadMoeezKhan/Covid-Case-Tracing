@@ -23,6 +23,7 @@ void addContact(string name, Contact* contact)
 {
 	int count = 0;
 	map<string, vector<Contact*>*>  :: iterator itr;
+	
 	for(itr = tracer.begin(); itr != tracer.end(); ++itr)
 	{
 		if(itr->first == name)
@@ -32,6 +33,7 @@ void addContact(string name, Contact* contact)
 			break;
 		}
 	}
+	
 	if(count == 0)
 	{
 		vector<Contact*>* newContact = new vector<Contact*>;
@@ -44,18 +46,23 @@ void inputContact()
 {
 	ifstream fin;
 	fin.open("contacts.csv", ios::in);
+	
 //	if(!fin.is_open()) throw std::runtime_error("Could not open file");
+	
 	vector<string> row;
 	string line, word;
+	
 	while(!fin.eof())
 	{
 		row.clear();
 		getline(fin, line);
 		stringstream s(line);
+		
 		while(getline(s, word, ','))
 		{
 			row.push_back(word);
 		}
+		
 		string name = row[0];
 		Contact* contact = new Contact(row[1], row[2], row[3]);
 		Contact* otherContact = new Contact(name, row[2], row[3]);
@@ -84,6 +91,7 @@ void printReport(string name) //
 {
 	bool present = false;
 	map<string, vector<Contact*>*>  :: iterator itr;
+	
 	for(itr = tracer.begin(); itr != tracer.end(); ++itr)
 	{
 		if(itr->first == name)
@@ -104,6 +112,7 @@ void printReport(string name) //
 			break;
 		}
 	}
+	
 	if(!present)
 	{
 		cout << "Name not found" << endl;
@@ -122,11 +131,14 @@ int main()
 	fstream fout;
 	fout.open("contacts.csv", ios::out | ios::app);
 	ifstream read("contacts.csv");
+	
 	if(read.peek() == EOF)
 	{
 		fout << "Name" << "," << "Contact" << "," << "Location" << "," << "Time" << "\n";
 	}
+	
 	cout << "----------- WELCOME TO SUPERTRACE!!! -----------" << endl;
+
 do
 {
 	tracer.clear();
@@ -140,6 +152,7 @@ do
 
 	switch(choice)
 	{
+			
 	case 1:
 		{
 			cout << "Enter name: ";
@@ -162,16 +175,19 @@ do
 
 			break;
 		}
+			
 	case 2:
 		{
 			cout << "Remove entry" << endl;
 			break;
 		}
+			
 	case 3:
 		{
 			cout << "Edit entry" << endl;
 			break;
 		}
+			
 	case 4:
 		{
 			inputContact();
@@ -180,18 +196,25 @@ do
 			printReport(name);
 			break;
 		}
+			
 	case 5:
 		{
 			remove("contacts.csv");
 			cout << "Database deleted." << endl;
 			break;
 		}
+			
 	}
+	
 	cout << "Do you want to continue? (y or n) ";
 	cin >> cont;
 	cout << "\n";
-}while(cont == 'y');
+	
+}
+
+while(cont == 'y');
 
 cout << "The program has ended.";
-	return 0;
+	
+return 0;
 }
